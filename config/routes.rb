@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  root "articles#index"
+  devise_for :users
+  root "home#index"
+
+  get '/articles/mine', to: 'articles#mine'
 
   resources :articles do
     resources :comments

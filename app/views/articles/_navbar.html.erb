@@ -1,0 +1,41 @@
+<div id='navbar-div'>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">Ruby Blog <%= current_user != nil ? " | " + current_user.email : "" %></a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+
+              <% if user_signed_in? %>
+                  <li class="nav-item">
+                      <%= link_to 'All Articles', articles_url, class: 'nav-link' %>
+                  </li>
+
+                  <li class="nav-item">
+                      <%= link_to 'My Articles', articles_mine_url, class: 'nav-link' %>
+                  </li>
+
+                  <li class="nav-item">
+                      <%= link_to "Create Article", new_article_path, class: 'nav-link' %>
+                  </li>
+
+                  <li class="nav-item">
+                      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+                  </li>
+              <% else %>
+                  <li class="nav-item">
+                      <%= link_to 'Create Account', new_user_registration_path, class: 'nav-link' %>
+                  </li>
+
+                  <li class="nav-item">
+                      <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+                  </li>
+              <% end %>
+
+            </ul>
+          </div>
+        </nav>
+  </div>

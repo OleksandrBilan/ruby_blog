@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+  <%= render "navbar" %>
+
+  <h1><%= @article.title %></h1>
+
+  <p><%= @article.body %></p>
+
+  <% if current_user != nil && current_user.email == @article.author_email %>
+    <ul>
+      <li><%= link_to "Edit", edit_article_path(@article) %></li>
+      <li><%= link_to "Destroy", article_path(@article),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } %></li>
+    </ul>
+  <% end %>
+
+  <h2>Comments</h2>
+  <%= render @article.comments %>
+
+  <% if current_user != nil %>
+    <h2>Add a comment:</h2>
+    <%= render 'comments/form' %>
+  <% end %>
+
+</body>
+</html>

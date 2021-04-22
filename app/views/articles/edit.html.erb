@@ -8,10 +8,11 @@
 </head>
 <body>
 
-    <%= render "articles/navbar" %>
+    <%= render "navbar" %>
+  
+    <h1>Edit Article</h1>
 
-    <p class='notice'><%= notice %></p>
-    <p class='alert'><%= alert %></p>
-    <h1>Welcome<%= name = current_user.present? ? ', ' + current_user.email : '' %></h1>
+    <%= render "form", article: @article %>
+
 </body>
 </html>
