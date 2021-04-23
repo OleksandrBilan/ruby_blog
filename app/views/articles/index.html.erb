@@ -5,22 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body>
 
   <%= render "articles/navbar" %>
-  
+
+  <div class='article-info'>
   <h1><%= Article.public_count %> Articles</h1>
 
   <ul>
-    <% @articles.each do |article| %>
-      <% if article.status == "public" %>
+    <% @articles.select { |article| article.status == "public" }.each do |article| %>
         <li>
           <%= article.author_nickname %>: <%= link_to article.title, article %>
         </li>
-      <% end %>
     <% end %>
   </ul>
+  </div>
+
+  <%= will_paginate @articles, renderer: BootstrapPagination::Rails, previous_label: '<= Previous Page', next_label: 'Next Page =>' %>
 
 </body>
 </html>

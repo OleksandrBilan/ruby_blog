@@ -1,3 +1,16 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+    height: 100vh;
+}
+
+.navbar {
+    font-size: 20px;
+}
+
+.article-info {
+    margin-left: 2%;
+    height: 50%;
+    font-size: 20px;
+}

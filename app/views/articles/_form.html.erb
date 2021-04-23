@@ -1,3 +1,4 @@
+<div class='article-info'>
 <%= form_with model: article do |form| %>
   <div>
     <%= form.label :title %><br>
@@ -30,7 +31,8 @@
   <br>
   <div>
     <%= form.label :status %><br>
-    <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+    <%= form.select :status, ['public', 'private', 'archived'], selected: article.status %>
   </div>
 
 <% end %>
+</div>
