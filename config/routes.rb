@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get '/articles/mine', to: 'articles#mine'
 
+  get 'find', to: 'articles#find'
+
   resources :articles do
     resources :comments
   end

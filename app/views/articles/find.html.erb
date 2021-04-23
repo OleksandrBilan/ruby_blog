@@ -16,11 +16,11 @@
     <form action="/find">
       <label for="q">Find articles by title:</label>
       <input type="text" name="q">
-      <button type="submit">Search</button>
+      <button type="submit">Find</button>
     </form>
   </div>
 
-  <h1><%= Article.public_count %> Articles</h1>
+  <p>Found <%= @articles.size %> articles:</p>
 
   <ul>
     <% @articles.select { |article| article.status == "public" }.each do |article| %>
@@ -30,8 +30,6 @@
     <% end %>
   </ul>
   </div>
-
-  <%= will_paginate @articles, renderer: BootstrapPagination::Rails, previous_label: '<= Previous Page', next_label: 'Next Page =>' %>
 
 </body>
 </html>

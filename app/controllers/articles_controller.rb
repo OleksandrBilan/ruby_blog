@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
   def index
-    @articles = Article.paginate(:page => params[:page], :per_page => 10)
+    @articles = Article.where("status = ?", "public").paginate(:page => params[:page], :per_page => 8)
   end
   
   def show
@@ -46,6 +46,10 @@ class ArticlesController < ApplicationController
 
   def mine
     @articles = Article.where("author_email = ?", current_user.email)
+  end
+
+  def find
+    @articles = Article.where("title = ?", params[:q])
   end
   
   private
