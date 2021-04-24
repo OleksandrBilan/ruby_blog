@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'find', to: 'articles#find'
 
+  get 'filter', to: 'articles#filter'
+
   resources :articles do
     resources :comments
   end

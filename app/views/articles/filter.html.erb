@@ -9,12 +9,22 @@
 </head>
 <body>
 
-  	<%= render "navbar" %>
-	
+  	<%= render "articles/navbar" %>
+
   	<div class='article-info'>
-  	<h1>New Article</h1>
+    	<%= render "find_by_title_div" %>
+
+    	<%= render "filter_by_categories_div" %>
 	
-  	<%= render "form", article: @article %>
+    	<p>Found <%= @articles.size %> articles:</p>
+	
+    	<ul>
+    	  	<% @articles.select { |article| article.status == "public" }.each do |article| %>
+    	  	    <li>
+    	  	      	<%= article.author_nickname %>: <%= link_to article.title, article %> - <%= article.category %>
+    	  	    </li>
+    	  	<% end %>
+    	</ul>
   	</div>
 
 </body>

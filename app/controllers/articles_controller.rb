@@ -51,10 +51,14 @@ class ArticlesController < ApplicationController
   def find
     @articles = Article.where("title = ?", params[:q])
   end
+
+  def filter
+    @articles = Article.where("category = ?", params[:q])
+  end
   
   private
     def article_params
-      params.require(:article).permit(:title, :body, :author_nickname, :author_email, :status)
+      params.require(:article).permit(:title, :body, :author_nickname, :author_email, :status, :category)
     end
 
 end

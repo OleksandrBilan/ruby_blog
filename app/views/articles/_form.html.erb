@@ -1,38 +1,43 @@
 <div class='article-info'>
 <%= form_with model: article do |form| %>
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-    <% article.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
+  	<div>
+  	  	<%= form.label :title %><br>
+  	  	<%= form.text_field :title %>
+  	  	<% article.errors.full_messages_for(:title).each do |message| %>
+  	  	  	<div><%= message %></div>
+  	  	<% end %>
+  	</div>
 
-  <div>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %><br>
-    <% article.errors.full_messages_for(:body).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
+  	<div>
+  	  	<%= form.label :body %><br>
+  	  	<%= form.text_area :body %><br>
+  	  	<% article.errors.full_messages_for(:body).each do |message| %>
+  	  	  	<div><%= message %></div>
+  	  	<% end %>
+  	</div>
 
-  <div>
-    <%= form.label :author_nickname %><br>
-    <%= form.text_field :author_nickname %><br>
-    <% article.errors.full_messages_for(:author).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
+  	<div>
+  	  	<%= form.label :author_nickname %><br>
+  	  	<%= form.text_field :author_nickname %><br>
+  	  	<% article.errors.full_messages_for(:author).each do |message| %>
+  	  	  	<div><%= message %></div>
+  	  	<% end %>
+  	</div>
 
-  <br>
-  <div>
-    <%= form.submit %>
-  </div>
-  <br>
-  <div>
-    <%= form.label :status %><br>
-    <%= form.select :status, ['public', 'private', 'archived'], selected: article.status %>
-  </div>
+  	<div>
+  	  	<%= form.label :category %><br>
+  	  	<%= form.select :category, ['informational', 'news', 'question'], selected: 'informational' %>
+  	</div>
+
+  	<br>
+  	<div>
+  	  	<%= form.submit %>
+  	</div>
+  	<br>
+  	<div>
+  	  	<%= form.label :status %><br>
+  	  	<%= form.select :status, ['public', 'private', 'archived'], selected: article.status %>
+  	</div>
 
 <% end %>
 </div>

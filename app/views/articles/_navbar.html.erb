@@ -1,45 +1,36 @@
 <div id='navbar-div'>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed">
-          <a class="navbar-brand" href="#">Ruby Blog <%= current_user != nil ? " | " + current_user.email : "" %></a>
-
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed">
+        <a class="navbar-brand" href="#">Ruby Blog <%= current_user != nil ? " | " + current_user.email : "" %></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarNav">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav pull-right">
-
-              <% if user_signed_in? %>
-                  <li class="nav-item">
-                      <%= link_to 'All articles', articles_url, class: 'nav-link' %>
-                  </li>
-
-                  <li class="nav-item">
-                      <%= link_to 'My articles', articles_mine_url, class: 'nav-link' %>
-                  </li>
-
-                  <li class="nav-item">
-                      <%= link_to "Create article", new_article_path, class: 'nav-link' %>
-                  </li>
-
-                  <li class="nav-item">
-                      <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
-                  </li>
-              <% else %>
-                  <li class="nav-item">
-                      <%= link_to 'All articles', articles_url, class: 'nav-link' %>
-                  </li>
-
-                  <li class="nav-item">
-                      <%= link_to 'Create account', new_user_registration_path, class: 'nav-link' %>
-                  </li>
-
-                  <li class="nav-item">
-                      <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
-                  </li>
-              <% end %>
-
-            </ul>
-          </div>
-        </nav>
-  </div>
+            <% if user_signed_in? %>
+                <li class="nav-item">
+                    <%= link_to 'All articles', articles_url, class: 'nav-link' %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to 'My articles', articles_mine_url, class: 'nav-link' %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "Create article", new_article_path, class: 'nav-link' %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+                </li>
+            <% else %>
+                <li class="nav-item">
+                    <%= link_to 'All articles', articles_url, class: 'nav-link' %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to 'Create account', new_user_registration_path, class: 'nav-link' %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
+                </li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+</div>

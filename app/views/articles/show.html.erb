@@ -9,30 +9,34 @@
 </head>
 <body>
 
-  <%= render "navbar" %>
+  	<%= render "navbar" %>
 
-  <div class='article-info show-file'>
-  <h1><%= @article.title %></h1>
+  	<div class='article-info show-file'>
+  	<h3>Category: <%= @article.category %></h3>
 
-  <p><%= @article.body %></p>
+  	<h1><%= @article.title %></h1>
 
-  <% if current_user != nil && current_user.email == @article.author_email %>
-    <ul>
-      <li><%= link_to "Edit", edit_article_path(@article) %></li>
-      <li><%= link_to "Destroy", article_path(@article),
-                      method: :delete,
-                      data: { confirm: "Are you sure?" } %></li>
-    </ul>
-  <% end %>
+  	<p><%= @article.body %></p>
 
-  <h2>Comments</h2>
-  <%= render @article.comments %>
+  	<% if current_user != nil && current_user.email == @article.author_email %>
+  	  	<ul>
+  	  	  	<li><%= link_to "Edit", edit_article_path(@article) %></li>
+  	  	  	<li><%= link_to "Destroy", article_path(@article),
+  	  	  	                method: :delete,
+  	  	  	                data: { confirm: "Are you sure?" } %></li>
+  	  	</ul>
+  	<% end %>
 
-  <% if current_user != nil %>
-    <h2>Add a comment:</h2>
-    <%= render 'comments/form' %>
-  <% end %>
-  </div>
+  	<h3>Author: <%= @article.author_nickname %></h3>
+
+  	<h2>Comments</h2>
+  	<%= render @article.comments %>
+
+  	<% if current_user != nil %>
+  	  	<h2>Add a comment:</h2>
+  	  	<%= render 'comments/form' %>
+  	<% end %>
+  	</div>
 
 </body>
 </html>
