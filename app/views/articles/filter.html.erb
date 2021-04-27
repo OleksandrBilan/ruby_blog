@@ -12,19 +12,21 @@
   	<%= render "articles/navbar" %>
 
   	<div class='article-info'>
-    	<%= render "find_by_title_div" %>
+		<div class="top">
+			<div class="count item">
+				<h2>Found <%= @articles.size %> articles</h2>
+			</div>
+		
+  	  		<%= render "find_by_title_div" %>
+		
+  	  		<%= render "filter_by_categories_div" %>
+		</div>
+	
+    	<%= render "articles_list" %>
 
-    	<%= render "filter_by_categories_div" %>
-	
-    	<p>Found <%= @articles.size %> articles:</p>
-	
-    	<ul>
-    	  	<% @articles.select { |article| article.status == "public" }.each do |article| %>
-    	  	    <li>
-    	  	      	<%= article.author_nickname %>: <%= link_to article.title, article %> - <%= article.category %>
-    	  	    </li>
-    	  	<% end %>
-    	</ul>
+		<div class='paginator'>
+			<%= will_paginate @articles, renderer: BootstrapPagination::Rails, previous_label: '<= Previous Page', next_label: 'Next Page =>' %>
+		</div>
   	</div>
 
 </body>

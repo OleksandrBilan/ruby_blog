@@ -1,8 +1,10 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 body {
     height: 100vh;
+    background: #f2f2f2 !important;
 }
 
 .navbar {
@@ -10,6 +12,215 @@ body {
 }
 
 .article-info {
-    margin-left: 2%;
     font-size: 20px;
+    height: 85%;
+}
+
+.articles-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 84%;
+
+    a {
+        width: 50%;
+        color: black;
+        align-items: center;
+        margin: 0.3%;
+        border: 1.8px solid gray;
+        border-radius: 4px;
+    }
+}
+
+.paginator {
+    text-align: center;
+    width: 97%;
+    height: 10%;
+    vertical-align: middle;
+}
+
+.title-header {
+    align-items: center;
+}
+
+.list-element {
+    background-color: #d9d9d9;
+    width: 100%;
+    padding-left: 1%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    h2 {
+        text-align: center;
+        margin: 5px;
+    }
+
+    h3 {
+        margin: 2px;
+    }
+
+    h4 {
+        margin: 2px;
+        text-align: end;
+    }
+} 
+
+.top {
+    display: flex;
+    flex-direction: row;
+    margin-left: 2%;
+    margin-right: 2%;
+    height: 7%;
+
+    input {
+        border-radius: 4px;
+        border: 2px solid gray;
+    }
+}
+
+.filter-by-categories-div {
+    width: 30%;
+
+    form {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .item {
+        height: 100%;
+    }
+
+    .select-div {
+        height: 100%;
+        margin-left: 1.5%;
+
+        select {
+            border-radius: 4px;
+            border: 2px solid gray;
+            height: 1.7em;
+        }
+    }
+
+    .label-div {
+        margin-left: 0;
+    }
+
+    .input-div {
+        margin-left: 1.5%;
+    }
+
+    .btn-div {
+        margin-left: 1.5%;
+    }
+}
+
+.find-by-title-div {
+    width: 40%;
+
+    form {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .item {
+        height: 100%;
+    }
+
+    .label-div {
+        margin-left: 0;
+    }
+
+    .input-div {
+        margin-left: 1%;
+    }
+
+    .btn-div {
+        margin-left: 1%;
+    }
+}
+
+.count {
+    width: 30%;
+
+    h2 {
+        margin: 0;
+    }
+}
+
+.sign-in-div {
+    width: 30%;
+    height: 50%;
+    font-size: 20px;
+    margin: auto;
+    margin-top: 5%;
+    border: 1.8px solid gray;
+    border-radius: 4px;
+    background-color: #d9d9d9;
+
+    h2 {
+        text-align: center;
+    }
+
+    .field {
+        margin: 3%;
+        
+        input {
+            height: 3em;
+        }
+    }
+
+    .links {
+        text-align: center;
+        margin: 4%;
+    }
+
+    .actions {
+        margin-top: 5%;
+
+        button {
+            width: 50%;
+            margin-left: 25%;
+            font-size: 20px;
+        }
+    }
+}
+
+.sign-up-div {
+    width: 30%;
+    height: 62%;
+    font-size: 20px;
+    margin: auto;
+    margin-top: 5%;
+    border: 1.8px solid gray;
+    border-radius: 4px;
+    background-color: #d9d9d9;
+
+    h2 {
+        text-align: center;
+    }
+
+    .field {
+        margin: 3%;
+        
+        input {
+            height: 3em;
+        }
+    }
+
+    .links {
+        text-align: center;
+        margin: 4%;
+    }
+
+    .actions {
+        margin-top: 5%;
+
+        button {
+            width: 50%;
+            margin-left: 25%;
+            font-size: 20px;
+        }
+    }
 }

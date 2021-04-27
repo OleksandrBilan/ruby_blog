@@ -1,13 +1,19 @@
-<div class='filter-by-categories-div'>
+<div class='filter-by-categories-div item'>
     <form action="/filter">
-        <label for="q">Filter articles by category:</label>
-
-        <select name="q">
-            <option value="informational">informational</option>
-            <option value="news">news</option>
-            <option value="question">question</option>
-        </select>
-
-        <button type="submit">Filter</button>
+        <div class="label-div item">
+            <label for="q">Filter articles by category:</label>
+        </div>
+        <div class="select-div item">
+            <select name="q">
+                <option value="science">science</option>
+                <option value="sport">sport</option>
+                <option value="art">art</option>
+                <option value="education">education</option>
+                <option value="chill">chill</option>
+            </select>
+        </div>
+        <div class="btn-div item">
+            <button type="submit" class="btn btn-secondary">Filter</button>
+        </div>
     </form>
 </div>

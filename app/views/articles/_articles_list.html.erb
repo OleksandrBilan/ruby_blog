@@ -1,0 +1,11 @@
+<div class="articles-list">
+	<% @articles.select { |article| article.status == "public" }.each do |article| %>
+		<a href="/articles/<%= article.id %>">
+  	    	<div class="list-element">
+				<h3><%= article.author_nickname %> - <%= article.category %></h3>
+				<h2 class="title-header"><%= article.title %></h2>
+				<h4><%= article.updated_at %></h4>
+			</div>
+		</a>
+  	<% end %>
+</div>

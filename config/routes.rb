@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-  root "home#index"
+  	devise_for :users
+  	root "home#index"
 
-  get '/articles/mine', to: 'articles#mine'
+  	get '/articles/mine', to: 'articles#mine'
 
-  get 'find', to: 'articles#find'
+  	get 'find', to: 'articles#find'
 
-  get 'filter', to: 'articles#filter'
+  	get 'filter', to: 'articles#filter'
 
-  resources :articles do
-    resources :comments
-  end
+  	resources :articles do
+  	  	resources :comments
+  	end
 
 end

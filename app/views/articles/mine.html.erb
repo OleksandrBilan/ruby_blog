@@ -12,32 +12,35 @@
   	<%= render "navbar" %>
 
   	<div class='article-info'>
-  		<p>Public</p>
+  		<% articles = @articles.select { |article| article.status == 'public' } %>
+  		<h2>Public - <%= articles.size %></h2>
   		<ul>
-  		  	<% @articles.select { |article| article.status == 'public' }.each do |article| %>
-  		  	  	<li>
-  		  	    	<%= link_to article.title, article %>
-  		  	  	</li>
-  		  	<% end %>
+		  	<% articles.each do |article| %>
+  		  		<li>
+  		  			<%= link_to article.title, article %>
+  		  		</li>
+			<% end %>
   		</ul>
 
-  		<p>Private</p>
+  		<% articles = @articles.select { |article| article.status == 'private' } %>
+  		<h2>Private - <%= articles.size %></h2>
   		<ul>
-  		  	<% @articles.select { |article| article.status == 'private' }.each do |article| %>
-  		    	<li>
-  		      		<%= link_to article.title, article %>
-  		    	</li>
-  		  	<% end %>
+		  	<% articles.each do |article| %>
+  		  		<li>
+  		  			<%= link_to article.title, article %>
+  		  		</li>
+			<% end %>
   		</ul>
 
-  		<p>Archived</p>
-  			<ul>
-  		 		<% @articles.select { |article| article.status == 'archived' }.each do |article| %>
-  		    		<li>
-  		    			<%= link_to article.title, article %>
-  		    		</li>
-  		  		<% end %>
-  			</ul>
+  		<% articles = @articles.select { |article| article.status == 'archieved' } %>
+  		<h2>Archieved - <%= articles.size %></h2>
+  		<ul>
+		  	<% articles.each do |article| %>
+  		  		<li>
+  		  			<%= link_to article.title, article %>
+  		  		</li>
+			<% end %>
+  		</ul>
   	</div>
 
 </body>
