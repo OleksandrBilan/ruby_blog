@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
+gem 'rails', '~> 6.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -55,3 +55,6 @@ gem 'will_paginate'
 
 gem 'will_paginate-bootstrap4'
 
+gem 'image_processing', '~> 1.2'
+gem 'aws-sdk-s3', require: false
+gem 'active_storage_validations'

@@ -11,32 +11,49 @@
 
   	<%= render "navbar" %>
 
-  	<div class='article-info show-file'>
-  	<h3>Category: <%= @article.category %></h3>
+  	<div class='article-info show-article'>
+		<div class="author-category">
+  			<h3><%= @article.author_nickname %> - <a href="/filter?q=<%= @article.category %>"><%= @article.category %></a></h3>
+		</div>
 
-  	<h1><%= @article.title %></h1>
+		<div class="title">
+  			<h1><%= @article.title %></h1>
+		</div>
 
-  	<p><%= @article.body %></p>
+		<div class="body">
+			<h2><%= @article.body %></h2>
+  		</div>
 
-  	<% if current_user != nil && current_user.email == @article.author_email %>
-  	  	<ul>
-  	  	  	<li><%= link_to "Edit", edit_article_path(@article) %></li>
-  	  	  	<li><%= link_to "Destroy", article_path(@article),
-  	  	  	                method: :delete,
-  	  	  	                data: { confirm: "Are you sure?" } %></li>
-  	  	</ul>
-  	<% end %>
+		<div class="edit-destroy">
+  			<% if current_user != nil && current_user.email == @article.author_email %>
+				<%= link_to "Edit", edit_article_path(@article) %> | 
+  			  	<%= link_to "Destroy", article_path(@article),
+  			  	  	                	method: :delete,
+  			  	  	                	data: { confirm: "Are you sure?" } %>
+  			  	</ul>
+  			<% end %>
+		</div>
 
-  	<h3>Author: <%= @article.author_nickname %></h3>
+		<div class="picture">
+			<% if @article.picture.attached? %>
+				<%= image_tag @article.picture %>
+			<% end %>
+		</div>
 
-  	<h2>Comments</h2>
-  	<%= render @article.comments %>
+		<div class="comments-list">
+  			<h3><%= @article.comments.size %> comments</h3>
+  			<%= render @article.comments %>
+		</div>
 
-  	<% if current_user != nil %>
-  	  	<h2>Add a comment:</h2>
-  	  	<%= render 'comments/form' %>
-  	<% end %>
-  	</div>
+		<div class="add-comment-form">
+  			<% if current_user != nil %>
+  			  	<h3>Add a comment:</h3>
+  			  	<%= render 'comments/form' %>
+  			<% else %>
+				<h3><a href="/users/sign_up">Create account</a> or <a href="/users/sign_in">sign in</a> to write a comment</h3>
+			<% end %>
+  		</div>
+	</div>
 
 </body>
 </html>

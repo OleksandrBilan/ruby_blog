@@ -11,10 +11,12 @@
 
   	<%= render "navbar" %>
 	
-  	<div class='article-info'>
-  	<h1>New Article</h1>
-	
-  	<%= render "form", article: @article %>
+  	<div class="article-info">
+  	    <h1>New Article</h1>
+    
+        <div class="create-article-form">
+  	        <%= render "form", article: @article %>
+        </div>
   	</div>
 
 </body>

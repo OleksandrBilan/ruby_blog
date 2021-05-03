@@ -15,11 +15,6 @@ body {
     background-color: #0d3b66;
 }
 
-.article-info {
-    font-size: 20px;
-    height: 85%;
-}
-
 .articles-list {
     display: flex;
     flex-direction: column;
@@ -216,6 +211,7 @@ nav {
         input {
             height: 3em;
             background: #1f2833;
+            color: #d7dadc;
         }
     }
 
@@ -258,6 +254,7 @@ nav {
         input {
             height: 3em;
             background: #1f2833;
+            color: #d7dadc;
         }
     }
 
@@ -313,5 +310,126 @@ nav {
 
     .archieved {
         margin-left: 0.7%;
+    }
+}
+
+.show-article {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border: 1.8px solid #0d3b66;
+    border-radius: 4px;
+    background-color: #1f2833;
+    color: #d7dadc;
+    margin: auto;
+    padding: 1%;
+    height: fit-content;
+
+    .author-category {
+        h3 {
+            margin: 0;
+        }
+    }
+
+    .title {
+        h1 {
+            margin: 0;
+            text-align: center;
+        }
+    }
+
+    .comment-form {
+        div {
+            margin-top: 1%;
+        }
+
+        .commenter {
+            input {
+                background: #1f2833;
+                width: 50%;
+                color: #d7dadc;
+            }
+
+            p {
+                margin: 0%;
+            }
+        }
+
+        .body {
+            textarea {
+                background: #1f2833;
+                width: 50%;
+                color: #d7dadc;
+            }
+
+            p {
+                margin: 0%;
+            }
+        }
+
+        .status {
+            select {
+                border-radius: 4px;
+                border: 2px solid #0d3b66;
+                background-color: #1f2833;
+                color: #d7dadc;
+                height: 1.7em;
+            }
+
+            p {
+                margin: 0%;
+            }
+        }
+        
+        .submit {
+            button {
+                font-size: 20px;
+                background-color: #0d3b66;
+                color: #d7dadc;
+            }
+        }
+    }
+}
+
+.edit {
+    font-size: 20px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border: 1.8px solid #0d3b66;
+    border-radius: 4px;
+    background-color: #1f2833;
+    color: #d7dadc;
+
+    h1 {
+        margin: 1%;
+        text-align: center;
+    }
+
+    select {
+        border-radius: 4px;
+        border: 2px solid #0d3b66;
+        background-color: #1f2833;
+        color: #d7dadc;
+        height: 1.7em;
+    }
+
+    input {
+        background: #1f2833;
+        width: 50%;
+        color: #d7dadc;
+    }
+
+    button {
+        font-size: 20px;
+        background-color: #0d3b66;
+        color: #d7dadc;
+    }
+
+    textarea {
+        background: #1f2833;
+        width: 50%;
+        color: #d7dadc;
     }
 }

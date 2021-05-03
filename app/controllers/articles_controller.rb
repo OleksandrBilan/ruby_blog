@@ -58,9 +58,20 @@ class ArticlesController < ApplicationController
   	  	@articles = Article.where("category = ?", params[:q]).order(updated_at: :desc).paginate(:page => params[:page], :per_page => 5)
   	end
 
+	def delete_image
+		image = ActiveStorage::Attachment.find(params[:image_id])
+		current_article = Article.find(params[:id])
+		if current_article == image.record
+			image.purge
+			redirect_back(fallback_location: request.referer)
+		else 
+			redirect_to root_url, notice: "else called"
+		end
+	end
+
   	private
   	  	def article_params
-  	    	params.require(:article).permit(:title, :body, :author_nickname, :author_email, :status, :category)
+  	    	params.require(:article).permit(:title, :body, :author_nickname, :author_email, :status, :category, :picture)
   	  	end
 
 end

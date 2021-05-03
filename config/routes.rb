@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   	resources :articles do
   	  	resources :comments
+		member do
+			delete 'delete_image/:image_id', action: 'delete_index', as: 'delete_image'
+		end
   	end
 
 end

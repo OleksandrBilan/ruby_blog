@@ -1,43 +1,44 @@
-<div class='article-info'>
+<div class="article-form">
 <%= form_with model: article do |form| %>
-  	<div>
+  	<div class="title">
   	  	<%= form.label :title %><br>
-  	  	<%= form.text_field :title %>
+  	  	<%= form.text_field :title, class: "form-control" %>
   	  	<% article.errors.full_messages_for(:title).each do |message| %>
   	  	  	<div><%= message %></div>
   	  	<% end %>
   	</div>
 
-  	<div>
+  	<div class="text">
   	  	<%= form.label :body %><br>
-  	  	<%= form.text_area :body %><br>
+  	  	<%= form.text_area :body, class: "form-control" %><br>
   	  	<% article.errors.full_messages_for(:body).each do |message| %>
   	  	  	<div><%= message %></div>
   	  	<% end %>
   	</div>
 
-  	<div>
+  	<div class="nickname">
   	  	<%= form.label :author_nickname %><br>
-  	  	<%= form.text_field :author_nickname %><br>
+  	  	<%= form.text_field :author_nickname, class: "form-control" %><br>
   	  	<% article.errors.full_messages_for(:author).each do |message| %>
   	  	  	<div><%= message %></div>
   	  	<% end %>
   	</div>
 
-  	<div>
+  	<div class="category">
   	  	<%= form.label :category %><br>
-  	  	<%= form.select :category, ['science', 'sport', 'art', 'education', 'chill'], selected: 'education' %>
+  	  	<%= form.select :category, ['science', 'sport', 'art', 'education', 'chill'], selected: 'education', class: "form-control" %>
   	</div>
 
-  	<br>
-  	<div>
-  	  	<%= form.submit %>
-  	</div>
-  	<br>
-  	<div>
+  	<button type="submit" class="btn btn-secondary">Find</button>
+
+  	<div class="status">
   	  	<%= form.label :status %><br>
-  	  	<%= form.select :status, ['public', 'private', 'archived'], selected: article.status %>
+  	  	<%= form.select :status, ['public', 'private', 'archived'], selected: article.status, class: "form-control" %>
   	</div>
+
+	<div class="image-picker">
+		<%= form.file_field :picture, class: "form-control", class: "form-control" %>
+	</div>
 
 <% end %>
 </div>
