@@ -32,8 +32,8 @@
 
 		<div class="edit-destroy">
   			<% if current_user != nil && current_user.email == @article.author_email %>
-				<%= link_to "Edit", edit_article_path(@article) %> | 
-  			  	<%= link_to "Destroy", article_path(@article),
+				<%= link_to "Edit", edit_article_path(@article) %> 
+  			  	<%= link_to "Destroy", article_path(@article), class: "destroy",
   			  	  	                	method: :delete,
   			  	  	                	data: { confirm: "Are you sure?" } %>
   			  	</ul>
