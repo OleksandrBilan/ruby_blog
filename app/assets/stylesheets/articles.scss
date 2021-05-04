@@ -86,108 +86,113 @@ nav {
     }
 }
 
-.title-header {
-    align-items: center;
+.article-info {
+    font-size: 20px;
+    height: 85%;
+
+    .top {
+        display: flex;
+        flex-direction: row;
+        margin-left: 2%;
+        margin-right: 2%;
+        height: 7%;
+        color: #d7dadc;
+    
+        input {
+            border-radius: 4px;
+            border: 2px solid #0d3b66;
+            background-color: #1f2833;
+            color: #d7dadc;
+        }
+    
+        .filter-by-categories-div {
+            width: 30%;
+        
+            form {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+            }
+        
+            .item {
+                height: 100%;
+            }
+        
+            .select-div {
+                height: 100%;
+                margin-left: 1.5%;
+        
+                select {
+                    border-radius: 4px;
+                    border: 2px solid #0d3b66;
+                    background-color: #1f2833;
+                    color: #d7dadc;
+                    height: 1.7em;
+                }
+            }
+        
+            .label-div {
+                margin-left: 0;
+            }
+        
+            .input-div {
+                margin-left: 1.5%;
+            }
+        
+            .btn-div {
+                margin-left: 1.5%;
+    
+                button {
+                    background-color: #0d3b66 !important;
+                    color: #d7dadc;
+                }
+            }
+        }
+        
+        .find-by-title-div {
+            width: 40%;
+        
+            form {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+            }
+        
+            .item {
+                height: 100%;
+            }
+        
+            .label-div {
+                margin-left: 0;
+            }
+        
+            .input-div {
+                margin-left: 1%;
+            }
+        
+            .btn-div {
+                margin-left: 1%;
+    
+                button {
+                    background-color: #0d3b66 !important;
+                    color: #d7dadc;
+                }
+            }
+        }
+        
+        .count {
+            width: 30%;
+        
+            h2 {
+                margin: 0;
+            }
+        }
+        
+    }
 }
 
-.top {
-    display: flex;
-    flex-direction: row;
-    margin-left: 2%;
-    margin-right: 2%;
-    height: 7%;
-    color: #d7dadc;
-
-    input {
-        border-radius: 4px;
-        border: 2px solid #0d3b66;
-        background-color: #1f2833;
-        color: #d7dadc;
-    }
-
-    .filter-by-categories-div {
-        width: 30%;
-    
-        form {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-        }
-    
-        .item {
-            height: 100%;
-        }
-    
-        .select-div {
-            height: 100%;
-            margin-left: 1.5%;
-    
-            select {
-                border-radius: 4px;
-                border: 2px solid #0d3b66;
-                background-color: #1f2833;
-                color: #d7dadc;
-                height: 1.7em;
-            }
-        }
-    
-        .label-div {
-            margin-left: 0;
-        }
-    
-        .input-div {
-            margin-left: 1.5%;
-        }
-    
-        .btn-div {
-            margin-left: 1.5%;
-
-            button {
-                background-color: #0d3b66 !important;
-                color: #d7dadc;
-            }
-        }
-    }
-    
-    .find-by-title-div {
-        width: 40%;
-    
-        form {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-        }
-    
-        .item {
-            height: 100%;
-        }
-    
-        .label-div {
-            margin-left: 0;
-        }
-    
-        .input-div {
-            margin-left: 1%;
-        }
-    
-        .btn-div {
-            margin-left: 1%;
-
-            button {
-                background-color: #0d3b66 !important;
-                color: #d7dadc;
-            }
-        }
-    }
-    
-    .count {
-        width: 30%;
-    
-        h2 {
-            margin: 0;
-        }
-    }
-    
+.title-header {
+    align-items: center;
 }
 
 .sign-in-div {
@@ -389,6 +394,12 @@ nav {
             }
         }
     }
+
+    .picture {
+        img {
+            width: 100%;
+        }
+    }
 }
 
 .edit {
@@ -403,7 +414,6 @@ nav {
     color: #d7dadc;
 
     h1 {
-        margin: 1%;
         text-align: center;
     }
 

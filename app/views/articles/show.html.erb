@@ -11,7 +11,7 @@
 
   	<%= render "navbar" %>
 
-  	<div class='article-info show-article'>
+  	<div class='show-article'>
 		<div class="author-category">
   			<h3><%= @article.author_nickname %> - <a href="/filter?q=<%= @article.category %>"><%= @article.category %></a></h3>
 		</div>
@@ -24,6 +24,12 @@
 			<h2><%= @article.body %></h2>
   		</div>
 
+		<div class="picture">
+			<% if @article.picture.attached? %>
+				<%= image_tag @article.picture %>
+			<% end %>
+		</div>
+
 		<div class="edit-destroy">
   			<% if current_user != nil && current_user.email == @article.author_email %>
 				<%= link_to "Edit", edit_article_path(@article) %> | 
@@ -32,12 +38,6 @@
   			  	  	                	data: { confirm: "Are you sure?" } %>
   			  	</ul>
   			<% end %>
-		</div>
-
-		<div class="picture">
-			<% if @article.picture.attached? %>
-				<%= image_tag @article.picture %>
-			<% end %>
 		</div>
 
 		<div class="comments-list">
