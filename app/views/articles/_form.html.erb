@@ -16,10 +16,16 @@
 	  	  	<% end %>
 	  	</div>
 
-		<div class="image-picker btn btn-secondary">
-			<!-- <%= form.file_field :picture, class: "form-control" %> -->
-			<span>Upload Photo</span>
-			<input type="file" name="picture" class="upload">
+		<div class="picture">
+			<% if @article.picture.attached? %>
+				<%= image_tag @article.picture, style: "width: 100%" %>
+			<% end %>
+		</div>
+
+		<div class="image-picker">
+			<%= form.file_field :picture, class: "form-control" %>
+			<!-- <span>Upload Photo</span>
+			<input type="file" name="picture" class="upload"> -->
 		</div>
 
 	  	<div class="nickname">
