@@ -10,4 +10,4 @@
 8. Docker Compose
 9. розгортання на heroku
 
-Website on heroku: https://glacial-inlet-44876.herokuapp.com/articles
+Website on heroku: https://glacial-inlet-44876.herokuapp.com/articles.%23%3CArticle::ActiveRecord_Relation:0x00005576701538f8%3E
