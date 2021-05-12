@@ -1,24 +1,13 @@
-# README
+Реалізовано:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. getting started
+2. автентифікація різними користувачами
+3. авторизація (перевірка дозволу виконання дій юзером)
+4. фільтрування за категоріями
+5. пагінація
+6. пошук за заголовком
+7. завантаження картинок
+8. Docker Compose
+9. розгортання на heroku
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Website on heroku: https://glacial-inlet-44876.herokuapp.com/articles
