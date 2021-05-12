@@ -52,6 +52,8 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
+  config.hosts << "glacial-inlet-44876.herokuapp.com"
+
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   config.active_storage.service = :local
